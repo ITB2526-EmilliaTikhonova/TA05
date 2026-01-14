@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="banner">
+      <h1 class="banner-title">EMILIA'S PORTFOLIO</h1>
+    </div>
+
+    <nav class="header-nav">
+      <div class="nav-links">
+        <a href="index_en.html">Home</a>
+        <a href="pages/about_en.html">About Me</a>
+        <a href="pages/proyectos_en.html">Projects</a>
+        <a href="pages/formulario_en.html">Contact</a>
+      </div>
+
+      <div class="lang-wrapper">
+        <button class="lang-btn" id="lang-btn">
+          Language <span class="lang-arrow">▼</span>
+        </button>
+        <div class="lang-menu" id="lang-menu">
+          <a href="index.html">Spanish</a>
+          <a href="index_ca.html">Catalan</a>
+          <a href="index_en.html">English</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h2 class="main-title">Introduction</h2>
+    <p class="main-text">
+      On this page I present my two most relevant projects, where I apply the knowledge I have acquired in practice and demonstrate my ability to design, implement, and secure real systems.
+    </p>
+  </main>
+
+  <a href="pages/proyecto1.html" class="card-link">
+    <article class="card">
+      <h2 class="card-title">Linux Infrastructure Deployment and Network Services</h2>
+      <div class="card-content">
+        <img src="sources/1thumb.jpg" alt="Thumbnail 1" class="card-thumb">
+        <p class="card-description">
+          Creation of a functional and secure environment for use in a real business setting. Deployment of infrastructure based on Linux servers, with essential services such as DNS, DHCP, FTP, and a web server.
+        </p>
+      </div>
+    </article>
+  </a>
+
+  <a href="pages/proyecto2.html" class="card-link">
+    <article class="card">
+      <h2 class="card-title">Virtualized Environment with Proxmox and Active Directory</h2>
+      <div class="card-content">
+        <img src="sources/2thumb.jpg" alt="Thumbnail 2" class="card-thumb">
+        <p class="card-description">
+          Development of a virtualization solution using technologies such as Proxmox and Windows/Linux virtual machines. Design of a segmented internal network, Active Directory, among other components.
+        </p>
+      </div>
+    </article>
+  </a>
+
+  <footer class="main-footer">
+    <p>© 2026 Emilia — All rights reserved</p>
+    <div class="social-links">
+      <a href="https://instagram.com/tu_usuario" target="_blank">Instagram</a>
+      <a href="https://github.com/tu_usuario" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/lucia-isabel" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById("lang-btn");
+    const menu = document.getElementById("lang-menu");
+
+    // Toggle menu and arrow
+    btn.addEventListener("click", () => {
+      const isOpen = menu.style.display === "block";
+      menu.style.display = isOpen ? "none" : "block";
+      btn.classList.toggle("open", !isOpen);
+    });
+
+    // Close if clicking outside
+    document.addEventListener("click", (e) => {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.style.display = "none";
+        btn.classList.remove("open");
+      }
+    });
+
+    // Change language when clicking a link
+    document.querySelectorAll(".lang-menu a").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = link.getAttribute("href");
+      });
+    });
+  </script>
+</body>
+</html>
