@@ -460,3 +460,28 @@ body {
     font-size: 2.2rem;
   }
 }
+/* === PROJECTS PAGE === */
+.projects-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra solo en la página de proyectos */
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #fdfdfd, #f7f2f2);
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--marron-suave);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  width: 100%;
+  justify-items: center;
+}
